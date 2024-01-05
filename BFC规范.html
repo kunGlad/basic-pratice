@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul {
+      border: 5px solid #999;
+      /* 设置BFC规范 */
+      /* overflow: auto; */
+    }
+    /* 通过虚拟标签 清除浮动的方式 */
+    ul:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    ul li {
+      /*ul 和 h1都是块级元素 但是li设置了float之后 
+      可以看到 ul并没有包裹着li   h1没有在下一行显示
+      这就叫做高度塌陷 */
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <!-- ul是一个块级元素 -->
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+      <!-- 这也是块级元素 -->
+      <h1>这是h1元素</h1>
+    </div>
+  </body>
+</html>

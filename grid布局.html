@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      width: 600px;
+      height: 600px;
+      border: 1px solid #000;
+      /* display: flex; */
+      display: grid;
+      grid-template-columns: 200px 100px 200px;
+      grid-template-rows: 50px 100px 200px;
+      /* grid-template-columns: repeat(auto-fill, 100px);
+      grid-template-rows: repeat(auto-fill, 200px); */
+      /* grid-template-columns: repeat(auto-fill); */
+      /* grid-template-columns: 1fr 1fr 2fr; */
+      /* grid-template-columns: 1fr 1fr minmax(100px, 1fr); */
+      /* 两栏式布局 */
+      /* grid-template-columns: 3fr 7fr; */
+      /* grid-template-columns: repeat(12, 1fr); */
+      /* gap: 20px 10px; */
+      /* grid-template-areas:
+        "a . c"
+        "d . f"
+        "g . i"; */
+      /* grid-auto-flow: column; */
+      column-gap: 20px;
+      justify-content: start;
+    }
+    .box div {
+      border: 1px solid #666;
+    }
+    .item-1 {
+      /* 去到正中间 */
+      grid-column-start: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-end: 3;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <div style="background-color: red" class="item-1">1</div>
+      <div style="background-color: orange">2</div>
+      <div style="background-color: yellow">3</div>
+      <div style="background-color: green">4</div>
+      <div style="background-color: aquamarine">5</div>
+      <div style="background-color: blue">6</div>
+      <div style="background-color: purple">7</div>
+      <div style="background-color: cornsilk">8</div>
+      <div style="background-color: cornflowerblue">9</div>
+    </div>
+  </body>
+</html>

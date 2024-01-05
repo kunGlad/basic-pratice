@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .triangle {
+      /* 一定要有个宽高限制 我们不需要宽高 ，我们取得就是border 否则就继承父元素的宽高 */
+      width: 0px;
+      height: 0px;
+      border: 10px solid transparent;
+      border-right: 10px solid red;
+    }
+    .circle {
+      /* 实心圆 */
+      width: 0px;
+      height: 0px;
+      border: 10px solid #000;
+      /* border-radius: 50%; */
+    }
+    .circle-outline {
+      /* 空心圆 */
+      width: 10px;
+      height: 10px;
+      border: 1px solid #000;
+      /* 必须大于等于 宽度或者高度的一半 */
+      border-radius: 5px;
+    }
+    .star {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    .arrow {
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 30px solid #666;
+    }
+  </style>
+  <body>
+    <div class="triangle"></div>
+    <div class="circle"></div>
+    <div class="circle-outline"></div>
+    <div class="star"></div>
+    <div class="arrow"></div>
+    <div class="tip">
+      <div class="tip-arrow"></div>
+    </div>
+  </body>
+</html>

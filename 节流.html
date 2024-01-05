@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>按钮</button>
+  </body>
+  <script>
+    const button = document.getElementsByTagName("button");
+    console.log(button);
+
+    function throttle(fn, delay) {
+      let timer = Date.now();
+
+      return function () {
+        const now = Date.now();
+        if (now - timer > delay) {
+          fn.apply(this, arguments);
+          timer = now;
+        } else {
+          console.log("正在执行");
+        }
+      };
+    }
+
+    function throttle_timestamp(fn, delay) {
+      let timer = null;
+
+      return function () {
+        if (timer) {
+        } else {
+          fn.apply(this, arguments);
+          timer = setTimeout(() => {
+            timer = null;
+          }, delay);
+        }
+      };
+    }
+
+    const btnclick = function () {
+      console.log("点击了");
+    };
+
+    button[0].addEventListener("click", throttle_timestamp(btnclick, 5000));
+  </script>
+</html>

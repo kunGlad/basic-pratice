@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+    .left {
+      width: 200px;
+      height: 100%;
+      flex-shrink: 0;
+      background-color: red;
+      order: 0;
+    }
+    .right {
+      width: 200px;
+      height: 100%;
+      flex-shrink: 0;
+      background-color: blue;
+      order: 2;
+    }
+    .content {
+      width: 100%;
+      height: 100%;
+      background-color: pink;
+      order: 1;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <div class="content">中</div>
+      <div class="left">左</div>
+      <div class="right">右</div>
+    </div>
+  </body>
+</html>
